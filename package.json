@@ -1,0 +1,29 @@
+{
+  "name": "labelup-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build",
+    "build": "webpack -d && copy \"src\\index.html\" \"dist\" && webpack-dev-server --content-base src --inline",
+    "build-prod": "webpack -p && copy \"src\\index.html\" \"dist\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  }
+}
