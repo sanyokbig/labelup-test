@@ -2,10 +2,8 @@ import React from 'react';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux'
 
-import AccountsList from './components/AccontsList.jsx';
-import configureStore from '../state/configureStore.js';
-
-const store = configureStore();
+import Accounts from './components/Accounts';
+import store from './store';
 
 class App extends React.Component {
     render() {
@@ -13,7 +11,8 @@ class App extends React.Component {
             <Provider store={store}>
                 <div className="container">
                     <div className="col-md-10 col-md-offset-1">
-                        <AccountsList/>
+                        <h1>Список</h1>
+                        <Accounts/>
                     </div>
                 </div>
             </Provider>
