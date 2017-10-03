@@ -18,7 +18,7 @@ export default function (state = initialState, action) {
                 accounts: action.data.accounts,
                 pagination: {
                     nextPage: 1,
-                    onNextPage: action.data.onNextPage,
+                    onNextPage: action.data.onNextPage || null,
                     totalCount: action.data.totalCount
                 },
                 list: action.data.list

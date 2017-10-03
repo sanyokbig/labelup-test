@@ -12,7 +12,7 @@ class Accounts extends Component {
         return <div>
             <Toggle currentList={list}/>
             <List accounts={accounts}/>
-            <ShowMore onNextPage={pagination.onNextPage}/>
+            {pagination.onNextPage && <ShowMore onNextPage={pagination.onNextPage}/>}
         </div>
     }
 }
