@@ -1,7 +1,9 @@
 import React from 'react';
 
 export default (props) => (
-    <li className='list-group-item'>
-        <span>{props.name} {props.followers} {props.postPrice}</span>
-    </li>
+    <tr>
+        <td>{props.name}</td>
+        <td>{props.followers}</td>
+        <td>{props.postPrice}</td>
+    </tr>
 );
