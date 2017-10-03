@@ -14,7 +14,6 @@ const initialState = {
 export default function (state = initialState, action) {
     switch (action.type) {
         case TOGGLE:
-            console.log(action.data);
             return Object.assign({}, state, {
                 accounts: action.data.accounts,
                 pagination: action.data.pagination,

@@ -11,17 +11,6 @@ const prepareToggle = (list) => {
 
     let onNextPage = Math.min(users.length - 3, 3);
 
-    console.log({
-        accounts: users.slice(0, 3),
-        pagination: {
-            nextPage: onNextPage > 0 ? 1 : null,
-            onNextPage: onNextPage > 0 ? onNextPage : null,
-            totalCount: users.length
-        },
-        list
-    });
-
-
     return {
         accounts: users.slice(0, 3),
         pagination: {
