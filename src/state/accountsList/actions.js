@@ -6,6 +6,7 @@ export const toggle = (data) => ({
     data
 });
 
-export const loadMore = () => dispatch => dispatch({
-    type: LOAD_MORE
+export const loadMore = (data) => ({
+    type: LOAD_MORE,
+    data
 });

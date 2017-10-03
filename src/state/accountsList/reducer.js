@@ -1,5 +1,5 @@
 import staticData from '../../staticData';
-import {TOGGLE} from './actions';
+import {LOAD_MORE, TOGGLE} from './actions';
 
 const initialState = {
     accounts: staticData.instagram.slice(0, 3),
@@ -22,6 +22,11 @@ export default function (state = initialState, action) {
                     totalCount: action.data.totalCount
                 },
                 list: action.data.list
+            });
+        case LOAD_MORE:
+            return Object.assign({}, state, {
+                accounts: state.accounts.concat(action.data.accounts),
+                pagination: action.data.pagination
             });
         default:
             return state;
