@@ -1,4 +1,4 @@
-export const instaUsers = [
+const instaUsers = [
     {
         name: 'Insta user 1',
         followers: 12,
@@ -26,7 +26,7 @@ export const instaUsers = [
     }
 ];
 
-export const youTubeUsers = [
+const youTubeUsers = [
     {
         name: 'Youtube user 1',
         followers: 45,
@@ -43,3 +43,8 @@ export const youTubeUsers = [
         postPrice: 244
     }
 ];
+
+export default {
+    youtube: youTubeUsers,
+    instagram: instaUsers
+}
