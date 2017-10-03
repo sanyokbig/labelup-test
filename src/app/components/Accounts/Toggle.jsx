@@ -1,29 +1,44 @@
 import React from 'react';
 import {ToggleButton, ToggleButtonGroup} from 'react-bootstrap';
 
-import store from '../../store';
 import {toggle} from "../../../state/accountsList/actions";
 
 import staticData from '../../../staticData';
+import {connect} from "react-redux";
 
-const onChange = (list) => {
+const prepareToggle = (list) => {
     const users = staticData[list];
-    const pageSize = 3;
 
-    store.dispatch(toggle({
-        accounts: users.slice(0, pageSize),
-        onNextPage: Math.min(users.length - 3, pageSize),
-        totalCount: users.length,
+    let onNextPage = Math.min(users.length - 3, 3);
+
+    console.log({
+        accounts: users.slice(0, 3),
+        pagination: {
+            nextPage: onNextPage > 0 ? 1 : null,
+            onNextPage: onNextPage > 0 ? onNextPage : null,
+            totalCount: users.length
+        },
         list
-    }))
+    });
+
+
+    return {
+        accounts: users.slice(0, 3),
+        pagination: {
+            nextPage: onNextPage > 0 ? 1 : null,
+            onNextPage: onNextPage > 0 ? onNextPage : null,
+            totalCount: users.length
+        },
+        list
+    };
 };
 
-export default ({currentList}) => (
+const ShowMore = ({currentList, dispatch}) => (
     <ToggleButtonGroup
         bsSize='sm'
         name='type'
         value={currentList}
-        onChange={onChange}
+        onChange={currentList => dispatch(toggle(prepareToggle(currentList)))}
     >
         <ToggleButton bsStyle='info' value='instagram'>
             Instagram
@@ -32,4 +47,6 @@ export default ({currentList}) => (
             Youtube
         </ToggleButton>
     </ToggleButtonGroup>
-)
+);
+
+export default connect()(ShowMore);

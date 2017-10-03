@@ -14,13 +14,10 @@ const initialState = {
 export default function (state = initialState, action) {
     switch (action.type) {
         case TOGGLE:
+            console.log(action.data);
             return Object.assign({}, state, {
                 accounts: action.data.accounts,
-                pagination: {
-                    nextPage: 1,
-                    onNextPage: action.data.onNextPage || null,
-                    totalCount: action.data.totalCount
-                },
+                pagination: action.data.pagination,
                 list: action.data.list
             });
         case LOAD_MORE:
