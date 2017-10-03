@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import list from './list/reducer.js';
+import accountsList from './accountsList/reducer.js';
 
 export default combineReducers({
-    list
+    accountsList
 })
